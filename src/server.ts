@@ -57,7 +57,7 @@ app.patch("/users/:id", (req: Request, res: Response) => {
 app.delete("/users/:id", (req: Request, res: Response) => {
   const userId = parseInt(req.params.id);
   users = users.filter((u) => u.id !== userId);
-  res.status(204).send({ success: true });
+  res.json({ success: true });
 });
 
 app.listen(port, () => {
